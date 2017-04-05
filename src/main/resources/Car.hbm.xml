@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sj.entity.Car" table="Car">
+		<id name="regNumber" type="java.lang.String">
+			<column name="REGNUMBER" />
+			<generator class="assigned" />
+		</id>
+		<property name="ownerName" type="java.lang.String">
+			<column name="OWNERNAME" />
+		</property>
+		<property name="model" type="java.lang.String">
+			<column name="MODEL" />
+		</property>
+		<property name="year" type="java.lang.Integer">
+			<column name="YEAR" />
+		</property>
+	</class>
+</hibernate-mapping>
