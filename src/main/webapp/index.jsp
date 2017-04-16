@@ -20,7 +20,7 @@
 <button type="submit">Find Car</button>
 </form:form>
 
-<form:form action="View All">
+<form:form action="ViewAll">
 <button type="submit">View All</button>
 </form:form>
 </body>

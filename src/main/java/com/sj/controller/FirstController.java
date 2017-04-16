@@ -17,5 +17,23 @@ public class FirstController {
 		
 	}
 	
+	@RequestMapping(value="Add")
+	public String Add(ModelMap model){
+		//model.addAttribute("message", "attribute added");
+		return "add";
+	}
+	
+	@RequestMapping(value="Find")
+	public String Find(ModelMap model){
+		model.addAttribute("message", "attribute found");
+		return "find";
+	}
+	
+	@RequestMapping(value="ViewAll")
+	public String ViewAll(ModelMap model){
+		model.addAttribute("message", "attribute added");
+		return "viewAll";
+	}
+	
 
 }

@@ -27,6 +27,9 @@
     <version>4.3.7.RELEASE</version>
 </dependency>
   
+
+
+
   <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
     <groupId>org.hibernate</groupId>
