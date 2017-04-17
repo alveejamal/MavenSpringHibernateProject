@@ -30,7 +30,18 @@ public class CarDao implements DAO<Car>{
 	@Override
 	public Car find(Object key) {
 		Session session = factory.openSession();
-		return session.find(Car.class, key);
+		
+		Car foundCar = new Car();
+		try
+		{
+			foundCar = session.find(Car.class, key);
+			return foundCar;
+		}
+		
+		catch(Exception e){
+			return null;
+		}
+		
 		
 	}
 	

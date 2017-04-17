@@ -1,8 +1,11 @@
 package com.sj.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sj.daoImpl.CarDao;
 import com.sj.entity.Car;
@@ -11,24 +14,32 @@ import com.sj.entity.Car;
 public class CarController {
 
 	@RequestMapping("/submitAdd")
-	public String added(@ModelAttribute("car") Car car){
-		
-		
+	public String added(@ModelAttribute("car") Car car) {
+
 		CarDao carDao = new CarDao();
 		carDao.add(car);
 		return "confirmation";
-		
+
 	}
-	
-	@RequestMapping("find")
-	public String found(String regNumber){
-		
-		
+
+	@RequestMapping("/find")
+	public String found(ModelMap model, String regNumber) {
+
 		CarDao carDao = new CarDao();
-		
-		carDao.find(regNumber);
+
+		Car foundCar = carDao.find(regNumber);
+
+		if (foundCar == null) {
+			model.addAttribute("foundStatus", "no car found");
+		} else {
+			model.addAttribute("foundStatus", "Following car found!");
+			model.addAttribute("model", foundCar.getModel());
+			model.addAttribute("getOwner", foundCar.getOwnerName());
+			model.addAttribute("year", foundCar.getYear());
+			model.addAttribute("regNum", foundCar.getRegNumber());
+		}
 		return "found";
-		
+
 	}
 
 }

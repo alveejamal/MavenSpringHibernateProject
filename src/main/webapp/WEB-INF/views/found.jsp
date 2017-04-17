@@ -8,6 +8,11 @@
 </head>
 <body>
 
-found
+<h1>${foundStatus}</h1>
+
+${regNum}
+${model}
+${getOwner}
+${year}
 </body>
 </html>
