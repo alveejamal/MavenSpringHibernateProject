@@ -29,11 +29,6 @@ public class FirstController {
 		return "find";
 	}
 	
-	@RequestMapping(value="ViewAll")
-	public String ViewAll(ModelMap model){
-		model.addAttribute("message", "attribute added");
-		return "viewAll";
-	}
-	
+
 
 }

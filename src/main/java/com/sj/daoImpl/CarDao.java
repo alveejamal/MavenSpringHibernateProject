@@ -1,5 +1,7 @@
 package com.sj.daoImpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -53,6 +55,17 @@ public class CarDao implements DAO<Car>{
 		session.delete(key);
 		trs.commit();
 				
+	}
+	
+	public List<Car> getAll(){
+		
+		Session session = factory.openSession();
+		
+		return session.createCriteria(Car.class).list();
+		
+		
+		
+			
 	}
 
 }
